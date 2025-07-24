@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zniżki Specjalne - Max 15 zł</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #212529;
+    }
+    header {
+      background: linear-gradient(to right, #007bff, #00c6ff);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      color: #ff4747;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      color: #007bff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .card h3 {
+      margin: 10px 0;
+      color: #343a40;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .opinie {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 50px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+    .opinie h2 {
+      text-align: center;
+      color: #007bff;
+    }
+    .opinia {
+      border-left: 4px solid #00c6ff;
+      padding-left: 15px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 30px 20px;
+      background: #f1f1f1;
+      color: #555;
+    }
+    .extra-program {
+      background: #ffffff;
+      margin-top: 60px;
+      padding: 40px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .extra-program h2 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    .extra-program p {
+      text-align: center;
+      font-size: 1rem;
+      color: #444;
+    }
+  </style>
+  <script>
+    function fakeCountdown() {
+      const now = new Date().getTime();
+      const future = now + 1000 * 60 * 15;
+      const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = future - now;
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("timer").innerHTML = `⏳ Zniżki wygasają za ${minutes}m ${seconds}s!`;
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "Zniżki wygasły! Odśwież stronę, by sprawdzić nowe.";
+        }
+      }, 1000);
+    }
+    window.onload = fakeCountdown;
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🎯 Turbo Zniżki – Wszystko do 15 zł 🎯</h1>
+    <p>Nie kupujesz sprzętu – tylko dostajesz legitne zniżki za śmieszne pieniądze. Zero ryzyka, max oszczędność.</p>
+    <div class="countdown" id="timer"></div>
+  </header>
+
+  <section class="container">
+    <div class="section-title">🔥 Aktualne zniżki</div>
+    <div class="product-grid">
+      <div class="card">
+        <img src="https://i.imgur.com/T4D7mGU.jpg" alt="Zniżka G2 Pro">
+        <h3>Zniżka Kukirin G2 Pro</h3>
+        <p>Cena: 14,99 zł</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/IYqPaZ2.jpg" alt="Zniżka G4 Max">
+        <h3>Zniżka Kukirin G4 Max</h3>
+        <p>Cena: 14,50 zł</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/y28c4wx.jpg" alt="Zniżka G3 Warrior">
+        <h3>Zniżka Kukirin G3 Warrior</h3>
+        <p>Cena: 13,99 zł</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/B2CL0Fj.jpg" alt="Zniżka Kamikaze Pro">
+        <h3>Zniżka Kamikaze Pro</h3>
+        <p>Cena: 12,99 zł</p>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/1X8JVOm.jpg" alt="Zniżka Kamikaze Lite">
+        <h3>Zniżka Kamikaze Lite</h3>
+        <p>Cena: 11,99 zł</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container opinie">
+    <h2>💬 Opinie klientów</h2>
+    <div class="opinia">„Zniżka zadziałała od razu, kupiłem G2 Pro i zaoszczędziłem prawie 300 zł. SZOK!” – Bartek z Łodzi</div>
+    <div class="opinia">„Za 14 ziko dostałem rabat i wszystko działało legitnie. Elegancko.” – Arek K.</div>
+    <div class="opinia">„Z Kamikaze Pro poleciało jak dzik w żołędzie. Tylko brać.” – Krystian420</div>
+    <div class="opinia">„Nie wiem jak, ale działa. Bezpieczne płatności i szybka wysyłka.” – Anna S.</div>
+    <div class="opinia">„Brałem już trzy razy i nigdy się nie zawiodłem. Szacun!” – Paweł K.</div>
+    <div class="opinia">„Wystarczyło kliknąć, zapłacić i zniżka była moja. 10/10” – Ola z Torunia</div>
+    <div class="opinia">„Zniżka na G4 Max przyszła na maila w 3 minuty. Jak magia.” – Michał K.</div>
+    <div class="opinia">„Myślałem że to ściema, ale działa. Kupiłem i polecam!” – Ewelina M.</div>
+  </section>
+
+  <section class="container extra-program">
+    <h2>💎 Jak to działa?</h2>
+    <p>Wybierasz interesującą Cię zniżkę, płacisz przez bezpieczny system (PayPal lub karta), a w kilka minut dostajesz na maila kod rabatowy. Wszystko prosto i legalnie.</p>
+    <p>Nie sprzedajemy sprzętu – tylko dostęp do unikalnych kodów rabatowych. Wszystkie zniżki są symboliczne i działają tylko z wybranymi sprzedawcami.</p>
+    <p>Kontakt: kukiringkukkirin@gmail.com</p>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Zniżki Specjalne. Wszystkie zniżki są symboliczne i nie gwarantują skuteczności. Kontakt: kukiringkukkirin@gmail.com
+  </footer>
+</body>
+</html>
